@@ -77,7 +77,7 @@ public class UserController {
         }
         user.setEnabled(true);
         user.setPassword(Security.getSHA1(user.getPassword()));
-        if (!users.addUser(user)) {
+        if (users.saveUser(user) == null) {
             session.setAttribute(
                     "error",
                     "Провал сохранения пользователя: указанный email уже используется!"

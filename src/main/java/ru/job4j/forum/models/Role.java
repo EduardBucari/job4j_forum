@@ -1,9 +1,13 @@
 package ru.job4j.forum.models;
 
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
+@Table(name = "tz_roles")
 public class Role {
 
+    @Id
     private int id;
     private String name;
     private String authority;
