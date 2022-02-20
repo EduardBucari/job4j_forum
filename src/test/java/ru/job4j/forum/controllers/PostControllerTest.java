@@ -1,6 +1,5 @@
 package ru.job4j.forum.controllers;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.springframework.beans.factory.annotation.Autowired;
