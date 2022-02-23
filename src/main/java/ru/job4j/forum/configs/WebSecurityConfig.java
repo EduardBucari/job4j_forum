@@ -22,16 +22,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private PasswordEncoder passEncoder;
     private DataSource ds;
-    private UserService users;
 
     public WebSecurityConfig(
             PasswordEncoder encoder,
-            DataSource dataSource,
-            UserService service1
+            DataSource dataSource
     ) {
         passEncoder = encoder;
         ds = dataSource;
-        users = service1;
     }
 
     @Override

@@ -22,7 +22,7 @@ public class UserController {
     private final UserService users;
     private final PasswordEncoder encoder;
 
-    public UserController(UserService service, PasswordEncoder passwordEncoder ) {
+    public UserController(UserService service, PasswordEncoder passwordEncoder) {
         users = service;
         encoder = passwordEncoder;
     }
@@ -48,9 +48,8 @@ public class UserController {
         if (logout != null) {
             model.addAttribute("message", "Вы покидаете форум. До свидания.");
         }
-        if (success != null && auth != null) {
-            User curUser = users.getCurrentUser(auth);
-            session.setAttribute("user", curUser);
+        if (success != null) {
+            session.setAttribute("user", users.getCurrentUser(auth));
             return "redirect:/";
         }
         return "user/login";
